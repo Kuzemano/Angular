@@ -1,0 +1,37 @@
+<section class="drivers-page">
+  <h1>Driver Standings</h1>
+
+  @if (drivers$ | async; as drivers) {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Pos</th>
+            <th>Driver</th>
+            <th>Team</th>
+            <th>Nat.</th>
+            <th>Pts</th>
+            <th>Wins</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (driver of drivers; track driver.code) {
+            <tr>
+              <td>{{ driver.position }}</td>
+              <td>
+                <strong>{{ driver.fullName }}</strong>
+                <div class="subtle">{{ driver.code }}</div>
+              </td>
+              <td>{{ driver.team }}</td>
+              <td>{{ driver.nationality }}</td>
+              <td>{{ driver.points }}</td>
+              <td>{{ driver.wins }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p>Loading standings...</p>
+  }
+</section>
