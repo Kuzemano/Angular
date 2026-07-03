@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { map } from 'rxjs';
 import { F1Api } from '../../core/services/f1-api';
 import { DriverStanding } from '../../core/models/driver-standing/driver-standing';
-
+// commiting Phase A
 @Component({
   selector: 'app-drivers',
   imports: [AsyncPipe, RouterLink],
